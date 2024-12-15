@@ -1,10 +1,20 @@
 [workspace]
+members = ["_001"]
 resolver = "2"
 
 [workspace.package]
 edition = "2021"
 
 [workspace.dependencies]
+nannou = { version = "0.18.1", git = "https://github.com/nannou-org/nannou.git", rev = "287be8a4d075b17332ca0bf34649f5d25e751c00", features = [
+    "wasm-experimental",
+] }
+wasm-bindgen = "0.2.84"
+wasm-bindgen-futures = "0.4.32"
+async-std = { version = "1.10.0", features = ["unstable"] }
+web-sys = { version = "0.3.57", features = ["console"] }
+console_error_panic_hook = { version = "0.1.7" }
+rand = "0.8.5"
 
 [profile.release]
 opt-level = "s"
