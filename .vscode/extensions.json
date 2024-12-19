@@ -1,6 +1,7 @@
 {
     "recommendations": [
+        "rust-lang.rust-analyzer",
         "dbaeumer.vscode-eslint",
-        "rust-lang.rust-analyzer"
+        "stylelint.vscode-stylelint"
     ]
 }
