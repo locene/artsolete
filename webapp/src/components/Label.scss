@@ -1,0 +1,97 @@
+#label {
+    width: 100%;
+    height: 100%;
+
+    .caption {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        justify-content: space-between;
+        align-items: baseline;
+        display: flex;
+        flex-direction: row-reverse;
+
+        .title {
+            padding: 0 24px;
+            height: 48px;
+            line-height: 48px;
+            cursor: pointer;
+            background-color: white;
+            color: #aaa;
+
+            >.no {
+                display: inline-block;
+                width: 1.8rem;
+                font-family: 'Azeret Mono', monospace;
+                font-size: smaller;
+                color: lightgray;
+            }
+
+            >.name {
+                display: inline-block;
+            }
+
+            &:hover,
+            &:active {
+                color: #888;
+            }
+        }
+    }
+
+    .description {
+        display: none;
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        max-width: 500px;
+        min-width: 240px;
+
+        .info {
+            margin: 24px 24px 0 24px;
+        }
+
+        .more {
+            padding: 0 24px;
+            height: 48px;
+            line-height: 48px;
+
+            .date {
+                font-family: 'Azeret Mono', monospace;
+                font-size: smaller;
+                color: lightgray;
+            }
+        }
+    }
+
+    .mask {
+        z-index: 10;
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(black, 0.05);
+    }
+
+    &.opened {
+        border-left: 1px dotted #ddd;
+        border-top: 1px dotted #ddd;
+
+        .caption {
+            z-index: 20;
+
+            .date {
+                display: block;
+            }
+        }
+
+        .description {
+            z-index: 15;
+        }
+
+        .description,
+        .mask {
+            display: block;
+        }
+    }
+}
