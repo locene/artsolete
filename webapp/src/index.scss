@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'DM Sans';
+    src: local('DM Sans'), url('./assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: local('DM Sans'), url('./assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Azeret Mono';
+    src: local('Azeret Mono'), url('./assets/fonts/Azeret_Mono/AzeretMono-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Azeret Mono';
+    src: local('Azeret Mono'), url('./assets/fonts/Azeret_Mono/AzeretMono-Italic-VariableFont_wght.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: REM;
+    src: local('REM'), url('./assets/fonts/REM/REM-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: REM;
+    src: local('REM'), url('./assets/fonts/REM/REM-Italic-VariableFont_wght.ttf') format('truetype');
+    font-style: italic;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: gray;
+    user-select: none;
+}
+
+#root {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #aaa;
+
+    &:hover,
+    &:active {
+        color: #888;
+    }
+}
