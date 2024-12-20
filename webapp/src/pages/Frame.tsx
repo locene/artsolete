@@ -18,7 +18,7 @@ function Frame() {
     return (
         <div id="frame">
             <Sidebar />
-            <iframe src={`/${id}/work`} sandbox="allow-scripts"></iframe>
+            <iframe src={`/${id}/work`} sandbox="allow-scripts allow-same-origin"></iframe>
             <div className="loading"><SvgSpinnersBarsScaleFade /></div>
             <Label />
             <div className="links">
