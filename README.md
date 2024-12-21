@@ -26,6 +26,10 @@ _"I finally reached the center of the maze, and what I found, guarded by the end
 
 ![](https://locene.com/repos/artsolete/assets/002.png)
 
+## Compatibility
+
+Tested on Chrome 131 and Safari 18.1, older versions of software are not guaranteed to be usable. Low-end devices may also not work properly.
+
 ## Note
 
 This repository **does not** accept pull requests. If you have any problems, please open an issue.
