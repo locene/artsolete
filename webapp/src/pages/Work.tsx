@@ -13,7 +13,20 @@ function Frame() {
     }, [id, work.name]);
 
     useEffect(() => {
-        const load = async () => {
+        const handleError = (event: any) => {
+            const message = { type: 'FROM_WORK', data: event.message };
+            window.parent.postMessage(message, import.meta.env.VITE_POST_MESSAGE_TARGET_ORIGIN);
+        };
+
+        window.addEventListener('error', handleError);
+
+        return () => {
+            window.removeEventListener('error', handleError);
+        };
+    }, []);
+
+    useEffect(() => {
+        (async () => {
             const canvas = document.querySelector('canvas[alt^=artsolete_]');
             if (canvas) {
                 canvas.remove();
@@ -22,9 +35,7 @@ function Frame() {
             const { default: init, main } = await import(`../../../canvas/_${id}/pkg/_${id}.js`);
             await init();
             main();
-        };
-
-        load();
+        })();
     }, [id]);
 
     return (
