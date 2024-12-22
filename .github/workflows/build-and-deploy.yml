@@ -1,0 +1,86 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+env:
+  SCCACHE_GHA_ENABLED: "true"
+  RUSTC_WRAPPER: "sccache"
+  DEPLOY_DIR: /var/deploy/locene/artsolete
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          ref: main
+
+      - name: Run sccache-cache
+        uses: mozilla-actions/sccache-action@main
+
+      - name: Set up rust
+        uses: actions-rust-lang/setup-rust-toolchain@main
+        with:
+          toolchain: stable
+          cache: false
+
+      - name: Build canvas
+        run: |
+          cd canvas
+          cargo install wasm-pack
+          chmod +x ./build_all_wasm.sh
+          ./build_all_wasm.sh
+
+      - name: Set up node
+        uses: actions/setup-node@main
+        with:
+          node-version: 20
+
+      - name: Build webapp
+        run: |
+          cd webapp
+          npm ci
+          npm run build
+
+      - name: Build image
+        run: |
+          docker build --force-rm -t locene/artsolete:latest -f deploy/Dockerfile .
+          docker save locene/artsolete > locene-artsolete.tar
+          docker image prune -f
+
+      - name: Copy image
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{secrets.SERVER_HOST}}
+          username: ${{secrets.SERVER_USER}}
+          password: ${{secrets.SERVER_PASS}}
+          source: "locene-artsolete.tar, deploy/docker-compose.yml"
+          target: ${{env.DEPLOY_DIR}}-${{github.run_id}}
+          strip_components: 1
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Finalize settings
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.SERVER_HOST}}
+          username: ${{secrets.SERVER_USER}}
+          password: ${{secrets.SERVER_PASS}}
+          script: |
+            docker load < ${{env.DEPLOY_DIR}}-${{github.run_id}}/locene-artsolete.tar
+            mkdir -p ${{env.DEPLOY_DIR}}
+            mv -f ${{env.DEPLOY_DIR}}-${{github.run_id}}/deploy/docker-compose.yml ${{env.DEPLOY_DIR}}/docker-compose.yml
+            rm -rf ${{env.DEPLOY_DIR}}-${{github.run_id}}
+            cd ${{env.DEPLOY_DIR}}
+            docker compose down
+            docker compose up -d
+            docker image prune -f
