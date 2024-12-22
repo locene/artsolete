@@ -1,0 +1,7 @@
+services:
+  locene-artsolete:
+    image: locene/artsolete:latest
+    container_name: locene-artsolete
+    restart: always
+    ports:
+      - "5001:80"
