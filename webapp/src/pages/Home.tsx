@@ -10,7 +10,7 @@ function Home() {
 
     return (
         <div id="home">
-            <div className="title">ARTSOLETE</div>
+            <div className="title" title="All digital art is created with technology that will eventually become obsolete">ARTSOLETE</div>
             <div className="entrance">
                 <NavLink to="/001">&lt;&nbsp;Entrance&nbsp;&gt;</NavLink>
             </div>
