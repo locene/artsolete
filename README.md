@@ -1,6 +1,6 @@
 # Artsolete
 
-_"The idea that all digital art is created with technology that will eventually become obsolete."_
+_"All digital art is created with technology that will eventually become obsolete."_
 
 <p align="right">- <a href='https://www.urbandictionary.com/define.php?term=artsolete'>Urban Dictionary</a></p>
 
@@ -20,7 +20,7 @@ This section contains screenshots only, please visit the [website](https://artso
 
 #### 002. [Maze](https://artsolete.locene.com/002)
 
-_"I finally reached the center of the maze, and what I found, guarded by the endless black walls, was something so fragile - a rosewood tree."_
+_"... I finally reached the center of the maze, and what I found, guarded by the endless black walls, was something so fragile - a rosewood tree."_
 
 <p align="right">- <a href='https://trow.cc/board/showtopic=26692'><i>Maze by Ænigmaze</i></a></p>
 
