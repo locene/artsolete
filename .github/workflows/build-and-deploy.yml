@@ -58,7 +58,6 @@ jobs:
           password: ${{secrets.SERVER_PASS}}
           source: "locene-artsolete.tar, deploy/docker-compose.yml"
           target: ${{env.DEPLOY_DIR}}-${{github.run_id}}
-          strip_components: 1
 
   deploy:
     needs: [build]
