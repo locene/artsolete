@@ -7,8 +7,6 @@ on:
   workflow_dispatch:
 
 env:
-  SCCACHE_GHA_ENABLED: "true"
-  RUSTC_WRAPPER: "sccache"
   DEPLOY_DIR: /var/deploy/locene/artsolete
 
 jobs:
@@ -21,14 +19,10 @@ jobs:
         with:
           ref: main
 
-      - name: Run sccache-cache
-        uses: mozilla-actions/sccache-action@main
-
       - name: Set up rust
         uses: actions-rust-lang/setup-rust-toolchain@main
         with:
           toolchain: stable
-          cache: false
 
       - name: Build canvas
         run: |
