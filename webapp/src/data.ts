@@ -17,9 +17,9 @@ export const works = [
         label: `
             <p><i>"... I finally reached the center of the maze, and what I found, guarded by the endless black walls, was something so fragile - a rosewood tree."</i></p>
             <p style="text-align: right;">
-                <span>-&nbsp;</span><a href="https://trow.cc/board/showtopic=26692" target="_blank"><i>Maze by Ænigmaze</i></a>
+                <span>-&nbsp;</span><a href="https://trow.cc/board/showtopic=26692" target="_blank"><i>Maze by Ænigmaze</i></a>&nbsp;<span title="Original text in Chinese, translated by Locene">*</span>
             </p>
-            <p>Inspired by the sentence above. <sup title="Original text in Chinese, translated by Locene">*</sup></p>
+            <p>Inspired by the sentence above.</p>
         `,
     },
 ];
