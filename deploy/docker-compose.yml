@@ -4,4 +4,4 @@ services:
     container_name: locene-artsolete
     restart: always
     ports:
-      - "5001:80"
+      - "127.0.0.1:5001:80"
