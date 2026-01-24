@@ -1,11 +1,11 @@
 import './Label.scss';
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { works } from '../data';
+import { pieces } from '../data/pieces';
 
 function Label() {
     const { id } = useParams();
-    const work = works.find(work => String(work.id).padStart(3, '0') === id)!;
+    const piece = pieces.find(piece => String(piece.id).padStart(3, '0') === id)!;
 
     const [isOpen, setIsOpen] = useState(false);
     const maskRef = useRef<HTMLDivElement | null>(null);
@@ -15,8 +15,8 @@ function Label() {
     };
 
     useEffect(() => {
-        const handleClickOutside = (event: any) => {
-            if (maskRef.current && maskRef.current.contains(event.target)) {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (maskRef.current && maskRef.current.contains(event.target as Node)) {
                 setIsOpen(false);
             }
         };
@@ -35,16 +35,16 @@ function Label() {
             <div className="caption">
                 <div className="title" onClick={toggleLabel}>
                     <span className="no">{id}</span>
-                    <span className="name">{work.name}</span>
+                    <span className="name">{piece.name}</span>
                 </div>
 
             </div>
             <div className="description">
                 <div className="info">
-                    <div dangerouslySetInnerHTML={{ __html: work.label }}></div>
+                    <div dangerouslySetInnerHTML={{ __html: piece.label }}></div>
                 </div>
                 <div className="more">
-                    <span className="date">{work.date}</span>
+                    <span className="date">{piece.date}</span>
                     <span>&nbsp;</span>
                 </div>
             </div>

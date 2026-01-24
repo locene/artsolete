@@ -1,7 +1,4 @@
 {
-    "[rust]": {
-        "editor.defaultFormatter": "rust-lang.rust-analyzer"
-    },
     "[typescript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
@@ -17,9 +14,8 @@
     "eslint.workingDirectories": [
         "./webapp"
     ],
-    "stylelint.customSyntax": "postcss-scss",
     "stylelint.validate": [
         "css",
         "scss"
-    ],
+    ]
 }

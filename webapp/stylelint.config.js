@@ -1,6 +1,6 @@
 export default {
     extends: [
-        'stylelint-config-standard-scss',
+        'stylelint-config-recommended-scss',
         '@stylistic/stylelint-config',
     ],
     rules: {

@@ -1,4 +1,4 @@
-export const works = [
+export const pieces = [
     {
         id: 1,
         name: 'Plattle',

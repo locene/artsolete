@@ -19,22 +19,10 @@ jobs:
         with:
           ref: main
 
-      - name: Set up rust
-        uses: actions-rust-lang/setup-rust-toolchain@main
-        with:
-          toolchain: stable
-
-      - name: Build canvas
-        run: |
-          cd canvas
-          cargo install wasm-pack
-          chmod +x ./build_all_wasm.sh
-          ./build_all_wasm.sh
-
       - name: Set up node
         uses: actions/setup-node@main
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
           cache-dependency-path: webapp/package-lock.json
 
@@ -46,6 +34,7 @@ jobs:
 
       - name: Build image
         run: |
+          cd webapp
           docker build --force-rm -t locene/artsolete:latest -f deploy/Dockerfile .
           docker save locene/artsolete > locene-artsolete.tar
           docker image prune -f
@@ -56,8 +45,9 @@ jobs:
           host: ${{secrets.SERVER_HOST}}
           username: ${{secrets.SERVER_USER}}
           password: ${{secrets.SERVER_PASS}}
-          source: "locene-artsolete.tar, deploy/docker-compose.yml"
+          source: "webapp/locene-artsolete.tar, webapp/deploy/docker-compose.yml"
           target: ${{env.DEPLOY_DIR}}-${{github.run_id}}
+          strip_components: 1
 
   deploy:
     needs: [build]

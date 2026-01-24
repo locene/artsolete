@@ -1,7 +1,7 @@
 import './Sidebar.scss';
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { works } from '../data';
+import { pieces } from '../data/pieces';
 
 function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +16,8 @@ function Sidebar() {
     };
 
     useEffect(() => {
-        const handleClickOutside = (event: any) => {
-            if (maskRef.current && maskRef.current.contains(event.target)) {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (maskRef.current && maskRef.current.contains(event.target as Node)) {
                 setIsOpen(false);
             }
         };
@@ -40,22 +40,22 @@ function Sidebar() {
                     className="back-text"
                     onClick={() => {
                         navigate('/');
-                        closeSidebar;
+                        closeSidebar();
                     }}
                 >
                     &lt;
                 </div>
             </div>
-            <ul className="works">
-                {works.map(work => (
-                    <li key={'w' + work.id}>
+            <ul className="pieces">
+                {pieces.map(piece => (
+                    <li key={piece.id}>
                         <NavLink
-                            to={'/' + String(work.id).padStart(3, '0')}
+                            to={'/' + String(piece.id).padStart(3, '0')}
                             className={({ isActive }) => (isActive ? 'active' : '')}
                             onClick={closeSidebar}
                         >
-                            <span>{String(work.id).padStart(3, '0')}</span>
-                            {work.name}
+                            <span>{String(piece.id).padStart(3, '0')}</span>
+                            {piece.name}
                         </NavLink>
                     </li>
                 ))}

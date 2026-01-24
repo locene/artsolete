@@ -31,7 +31,7 @@
         }
     }
 
-    .works {
+    .pieces {
         display: none;
         flex-direction: column-reverse;
         flex-grow: 1;
@@ -99,12 +99,12 @@
         border-right: 1px dotted #ddd;
 
         .list,
-        .works,
+        .pieces,
         .back {
             z-index: 20;
         }
 
-        .works {
+        .pieces {
             display: flex;
         }
 

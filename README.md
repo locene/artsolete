@@ -6,7 +6,7 @@ _"All digital art is created with technology that will eventually become obsolet
 
 ## Introduction 
 
-Personal coding challenge aimed at exploring generative art. Built using [Nannou](https://github.com/nannou-org/nannou).
+Personal coding challenge aimed at exploring generative art.
 
 If you're interested, feel free to implement any of the works here with your own code. Discussions about new ideas are always welcome.
 
@@ -28,7 +28,7 @@ _"... I finally reached the center of the maze, and what I found, guarded by the
 
 ## Compatibility
 
-Tested on Chrome 131 and Safari 18.1, older versions of software are not guaranteed to be usable. Low-end devices may also not work properly.
+Tested against the current major versions of Chrome and Safari, older versions of these browsers are not guaranteed to be usable. Low-end devices may also not work properly.
 
 ## Note
 

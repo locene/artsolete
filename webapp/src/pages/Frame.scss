@@ -22,7 +22,7 @@
         line-height: 48px;
     }
 
-    .incompatible {
+    .error {
         z-index: -1;
         position: fixed;
         width: 100%;
@@ -32,10 +32,14 @@
         justify-content: center;
         align-items: center;
 
-        >div {
+        > div {
             width: 300px;
             font-size: smaller;
             color: #aaa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     }
 
