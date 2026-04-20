@@ -22,4 +22,12 @@ export const pieces = [
             <p>Inspired by the sentence above.</p>
         `,
     },
+    {
+        id: 3,
+        name: 'Metaball Mandala',
+        date: '2026/04/20',
+        label: `
+            <p>Takes cues from <a href="https://en.wikipedia.org/wiki/Metaballs" target="_blank">Metaballs</a> and <a href="https://en.wikipedia.org/wiki/Mandala" target="_blank">Mandala</a>.</p>
+        `,
+    },
 ];

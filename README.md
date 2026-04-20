@@ -14,17 +14,18 @@ If you're interested, feel free to implement any of the works here with your own
 
 This section contains screenshots only, please visit the [website](https://artsolete.locene.com)  for the interactive version.
 
-#### 001. [Palette](https://artsolete.locene.com/001)
-
-![](https://locene.com/repos/artsolete/assets/001.png)
-
-#### 002. [Maze](https://artsolete.locene.com/002)
-
-_"... I finally reached the center of the maze, and what I found, guarded by the endless black walls, was something so fragile - a rosewood tree."_
-
-<p align="right">- <a href='https://trow.cc/board/showtopic=26692'><i>Maze by Ænigmaze</i></a></p>
-
-![](https://locene.com/repos/artsolete/assets/002.png)
+<table>
+    <tr>
+        <td><img align="center" src="https://locene.com/repos/artsolete/assets/001.png" /></td>
+        <td><img align="center" src="https://locene.com/repos/artsolete/assets/002.png" /></td>
+        <td><img align="center" src="https://locene.com/repos/artsolete/assets/003.png" /></td>
+    </tr>
+    <tr>
+        <th>001. <a href="https://artsolete.locene.com/001" target="_blank">Palette</a></th>
+        <th>002. <a href="https://artsolete.locene.com/002" target="_blank">Maze</a></th>
+        <th>003. <a href="https://artsolete.locene.com/003" target="_blank">Metaball Mandala</a></th>
+    </tr>
+</table>
 
 ## Compatibility
 
@@ -37,4 +38,5 @@ This repository **does not** accept pull requests. If you have any problems, ple
 As this is a hobby project, updates may not be regular.
 
 ## License
+
 [AGPL-3.0](LICENSE)
